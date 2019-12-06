@@ -2,8 +2,8 @@ let cvs = document.getElementById("canvas");
 let ctx = cvs.getContext("2d");
 
 // Звуки
-var fly_audio = new Audio(); // Звук при прыжке
-var score_audio = new Audio(); // Звук при увеличении очков
+let fly_audio = new Audio(); // Звук при прыжке
+let score_audio = new Audio(); // Звук при увеличении очков
 
 //Ниже создаем ссылки на нужные аудио файлы
 fly_audio.src = "audio/fly.mp3";
@@ -26,6 +26,9 @@ land.src = "img/land.png.";
 
 const moveUp = () => {
     yPos -= 25;
+    if (yPos < 0) {//Не даем птичке улететь за верхний край игрового поля.
+        yPos = 1
+    }
     fly_audio.play();
 }
 
@@ -41,8 +44,8 @@ pipe[0] = {
 let gap = 90 //Ширина щели между трубами
 
 
-let xPos = 10; //Позиция птицы по оси Х
-let yPos = 150; //Позиция птицы по оси Y
+let xPos = 10; // Начальная позиция птицы по оси Х
+let yPos = 150; //Начальная позиция птицы по оси Y
 
 let grav = 1; //Гравитация
 
@@ -57,7 +60,7 @@ const draw = () => { //Отрисовываем изображения
 
         pipe[i].x--;
 
-        if (pipe[i].x == 75) {
+        if (pipe[i].x == 75) {//Добавляем новую трубу если текущаяя отдалилась от правого края
             pipe.push({
                 x: cvs.width,
                 y: Math.floor(Math.random() * pipeUp.height) - pipeUp.height
@@ -68,12 +71,15 @@ const draw = () => { //Отрисовываем изображения
         if (xPos + bird.width >= pipe[i].x &&
             xPos <= pipe[i].x + pipeUp.width &&
             (yPos <= pipe[i].y + pipeUp.height ||
-                yPos + bird.height >= pipe[i].y + pipeUp.height + gap) ||
-            yPos + bird.height >= cvs.height - land.height) {
-            location.reload(); // Перезагружаем страницу, если произошло столкновение
+                yPos + bird.height >= pipe[i].y + pipeUp.height + gap)) {
+            grav = 5; //После столкновения с трубой заставляем птичку падать
         }
 
-        if (pipe[i].x == xPos) {
+        if (yPos + bird.height >= cvs.height - land.height){
+            location.reload();//При столкновении с землей перезагружаем игру
+        }
+
+        if (pipe[i].x == xPos) {//Прибавляем счетчик на +1 после пролета птички между очередными трубами
             score++;
             score_audio.play();
         }
