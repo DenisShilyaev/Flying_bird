@@ -8,5 +8,8 @@
 
 Удачи.
 
-###Смотрите рисунок интерфейса игры ниже: 
-![Image alt](https://github.com/DenisShilyaev/to_do_list/raw/master/for_README/Interface.png)
+Смотрите рисунок интерфейса игры ниже: 
+![Image alt](https://github.com/DenisShilyaev/Flying_bird/raw/master/for_README/Interface.png)
+
+
+Если Вы нашли ошибку или у Вас есть предложение по улучшению проекта, то, пожалуйста, напишите мне.
