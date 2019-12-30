@@ -4,16 +4,17 @@
 ## Краткая инструкция
 При нажатии на любую клавишу птица взмахивает крыльями и поднимается на небольшую высоту. Необходимо ловко маневрировать и пролетать между встречающимися на пути тубами. При столкновении с трубой или землёй птица падает на землю, и игра начинается снова. При пролете между трубами количество очков увеличивается на 1.
 
-Цель игры - заработать максимально количество очков. 
+Цель игры - заработать максимальное количество очков. 
 
 Удачи.
 
-##Смотрите рисунок интерфейса игры ниже:
+Смотрите рисунок интерфейса игры ниже:
 
 ![Image alt](https://github.com/DenisShilyaev/Flying_bird/raw/master/for_README/Interface.png)
 
 Если Вы нашли ошибку или у Вас есть предложение по улучшению проекта, то, пожалуйста, напишите мне.
 
+<<<<<<< HEAD
 
 # Flying bird
 A little game. Created on the basis of a video tutorial with the aim of practicing work on Javascript.
@@ -30,3 +31,6 @@ Good luck.
 ![Image alt](https://github.com/DenisShilyaev/Flying_bird/raw/master/for_README/Interface.png)
 
 If you find a mistake or you have a suggestion for improving the project, then please write to me.
+=======
+Если Вы нашли ошибку или у Вас есть предложение по улучшению проекта, то, пожалуйста, напишите мне.
+>>>>>>> 93e6533f05e2e343b0b26e7d53b599f4a28e7fab
